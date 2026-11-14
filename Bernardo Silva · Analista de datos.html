@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bernardo Silva · Analista de datos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#000;--panel:#07110b;--line:#143222;--g:#1fe08a;--g2:#0f9f5c;--txt:#d8f3e5;--mut:#7fa690;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--txt);font:400 1rem/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Unbounded,Manrope,sans-serif;font-weight:700;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.wrap{width:min(1100px,100% - 40px);margin-inline:auto}
+#glow{position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(420px circle at var(--x,50%) var(--y,30%),rgba(31,224,138,.10),transparent 70%)}
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:20;backdrop-filter:blur(10px);background:rgba(0,0,0,.6);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.logo{font:700 1rem Unbounded,sans-serif;text-decoration:none;color:var(--g)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;font-size:.9rem;color:var(--mut);transition:color .2s}
+nav ul a:hover{color:var(--g)}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:96px 0 56px;overflow:hidden}
+#rain{position:absolute;inset:0;width:100%;height:100%;opacity:.38}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,0,0,.2),#000 85%)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hi{color:var(--g);font-weight:700;margin:0 0 10px}
+h1{font-size:clamp(2.4rem,6.4vw,4.6rem)}
+.role{font:500 clamp(1.05rem,2.4vw,1.4rem)/1.4 Manrope;color:var(--mut);margin:18px 0 26px;min-height:2.8em}
+.role b{color:var(--txt)}
+.caret{display:inline-block;width:.55ch;height:1.1em;background:var(--g);vertical-align:-.2em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;border:1px solid var(--g);text-decoration:none;font-weight:700;transition:transform .2s,background .2s,box-shadow .2s}
+.btn.main{background:var(--g);color:#001a0d}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px -8px var(--g)}
+.btn.ghost:hover{background:rgba(31,224,138,.12)}
+.dash{background:rgba(7,17,11,.82);border:1px solid var(--line);border-radius:20px;padding:20px;transform-style:preserve-3d;transition:transform .15s;box-shadow:0 30px 80px -30px rgba(31,224,138,.35)}
+.dash header{display:flex;justify-content:space-between;font-size:.8rem;color:var(--mut);margin-bottom:6px}
+.dash header i{font-style:normal;color:var(--g)}
+.dash svg{width:100%;height:auto;display:block}
+.bar{fill:var(--g2);transform-box:fill-box;transform-origin:bottom;transform:scaleY(0);animation:grow .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i)*90ms + .5s)}
+@keyframes grow{to{transform:scaleY(1)}}
+.ln{fill:none;stroke:var(--g);stroke-width:3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.2s ease-out 1.2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.dot{fill:var(--g);animation:pulse 1.6s ease-out infinite 3.4s;opacity:0}
+@keyframes pulse{0%{opacity:1;r:5}100%{opacity:0;r:18}}
+.dotc{fill:var(--g);opacity:0;animation:show .1s 3.3s forwards}
+@keyframes show{to{opacity:1}}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.kpis div{border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.kpis strong{display:block;font:700 1.5rem Unbounded;color:var(--g)}
+.kpis span{font-size:.75rem;color:var(--mut)}
+.tick{border-block:1px solid var(--line);overflow:hidden;background:var(--panel);position:relative;z-index:2}
+.tick div{display:flex;gap:48px;width:max-content;padding:16px 0;animation:slide 28s linear infinite;font:700 1rem Unbounded;color:var(--mut)}
+.tick span::before{content:"▪";color:var(--g);margin-right:48px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{position:relative;z-index:2;padding:90px 0}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:12px}
+.sub{color:var(--mut);max-width:60ch;margin:0 0 36px}
+.term{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;font:500 .9rem/1.7 ui-monospace,Menlo,Consolas,monospace}
+.term .bar2{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.term .bar2 i{width:11px;height:11px;border-radius:50%;background:var(--line)}
+.term .bar2 i:first-child{background:var(--g)}
+.term pre{margin:0;padding:18px;white-space:pre-wrap;min-height:190px;color:var(--txt)}
+.k{color:var(--g)}.c{color:var(--mut)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{font:700 .9rem Manrope;background:none;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer;transition:all .2s}
+.tabs button:hover{color:var(--g);border-color:var(--g)}
+.tabs button[aria-selected=true]{background:var(--g);color:#001a0d;border-color:var(--g)}
+.chips{display:flex;flex-wrap:wrap;gap:12px;min-height:150px;align-content:flex-start}
+.chip{padding:12px 20px;border:1px solid var(--line);background:var(--panel);border-radius:12px;font-weight:500;opacity:0;transform:translateY(14px) scale(.96);animation:pop .5s cubic-bezier(.2,.9,.3,1.3) forwards;animation-delay:calc(var(--i)*60ms);transition:border-color .2s,color .2s}
+.chip:hover{border-color:var(--g);color:var(--g)}
+@keyframes pop{to{opacity:1;transform:none}}
+.tl{position:relative;padding-left:34px;margin-top:10px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:0;width:2px;background:var(--line)}
+.tl::after{content:"";position:absolute;left:7px;top:6px;width:2px;height:calc(var(--p,0)*100% - 6px);background:linear-gradient(var(--g),var(--g2));box-shadow:0 0 14px var(--g)}
+.job{position:relative;margin-bottom:34px;padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:var(--panel);transition:border-color .25s,transform .25s}
+.job:hover{border-color:var(--g);transform:translateX(6px)}
+.job::before{content:"";position:absolute;left:-34px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--ink);border:2px solid var(--g)}
+.job h3{font-size:1.15rem;margin-bottom:4px}
+.job small{color:var(--g);font-weight:700}
+.job ul{margin:12px 0 0;padding-left:18px;color:var(--mut)}
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.edu div{padding:22px;border:1px solid var(--line);border-radius:16px;background:var(--panel);transition:transform .25s,border-color .25s}
+.edu div:hover{transform:translateY(-6px);border-color:var(--g)}
+.edu b{display:block;font-family:Unbounded;font-size:.95rem;margin:6px 0}
+.edu span{color:var(--g);font-weight:700;font-size:.85rem}
+.edu p{margin:0;color:var(--mut);font-size:.9rem}
+.contact{text-align:center;border:1px solid var(--line);border-radius:28px;padding:64px 24px;background:radial-gradient(circle at 50% 0,rgba(31,224,138,.16),var(--panel) 70%)}
+.contact .btns{justify-content:center;margin-top:24px}
+footer{position:relative;z-index:2;text-align:center;color:var(--mut);padding:30px 0 50px;font-size:.85rem}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}nav ul{gap:14px}nav ul li:nth-child(n+4){display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition:none!important}.rv{opacity:1;transform:none}.bar{transform:none}.ln{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div id="glow"></div>
+<nav><div class="wrap"><a class="logo" href="#top">BS/&gt;</a>
+<ul><li><a href="#consulta">Consulta</a></li><li><a href="#skills">Habilidades</a></li><li><a href="#exp">Experiencia</a></li><li><a href="#edu">Formación</a></li><li><a href="#contacto">Contacto</a></li></ul></div></nav>
+
+<header class="hero" id="top">
+<canvas id="rain" aria-hidden="true"></canvas>
+<div class="wrap">
+<div>
+<p class="hi">Hola, soy</p>
+<h1>Bernardo Silva</h1>
+<p class="role">Analista de datos. <b id="typed"></b><span class="caret"></span></p>
+<div class="btns"><a class="btn main" href="#contacto">Hablemos</a><a class="btn ghost" href="#exp">Ver experiencia</a></div>
+</div>
+<div class="dash" id="dash" aria-label="Gráfico de ejemplo">
+<header><span>Ventas mensuales</span><i>● en vivo · datos de ejemplo</i></header>
+<svg viewBox="0 0 400 200" role="img" aria-label="Barras y línea de tendencia creciente">
+<g stroke="#143222" stroke-width="1"><path d="M0 40H400M0 90H400M0 140H400M0 190H400"/></g>
+<g id="bars"></g>
+<path class="ln" pathLength="1" d="M20 150 L85 128 L150 138 L215 96 L280 84 L345 46 L385 28"/>
+<circle class="dotc" cx="385" cy="28" r="5"/><circle class="dot" cx="385" cy="28" r="5"/>
+</svg>
+<div class="kpis"><div><strong data-n="4" data-s="+">0</strong><span>años de experiencia</span></div><div><strong data-n="2">0</strong><span>países</span></div><div><strong data-n="3">0</strong><span>idiomas</span></div></div>
+</div>
+</div>
+</header>
+
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+
+<section id="consulta"><div class="wrap rv">
+<h2>Pregunto a los datos y me responden</h2>
+<p class="sub">Una consulta SQL de ejemplo: así empieza casi todo mi trabajo, antes de llevarlo a un dashboard.</p>
+<div class="term"><div class="bar2"><i></i><i></i><i></i></div><pre id="sql"></pre></div>
+</div></section>
+
+<section id="skills"><div class="wrap rv">
+<h2>Lo que sé hacer</h2>
+<p class="sub">Análisis de datos, programación y ciberseguridad. Elige un área.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="chips" id="chips" role="tabpanel"></div>
+</div></section>
+
+<section id="exp"><div class="wrap">
+<h2 class="rv">Dónde he trabajado</h2>
+<p class="sub rv">Más de cuatro años analizando datos en empresas de Australia y Brasil.</p>
+<div class="tl" id="tl">
+<article class="job rv"><h3>Analista de datos · WonderLand Balloons</h3><small>Australia · 3 años 5 meses</small>
+<ul><li>Dashboards en Power BI de ventas, inventario y operaciones.</li><li>Consultas SQL optimizadas para consolidar datos de varias fuentes.</li><li>Reportes y flujos de datos automatizados con Python.</li><li>KPIs definidos con áreas comerciales y presentados a gerencia.</li></ul></article>
+<article class="job rv"><h3>Analista de datos · LawnStarter</h3><small>Brasil · 9 meses</small>
+<ul><li>Análisis de datos operativos y de clientes para detectar tendencias.</li><li>Reportes y visualizaciones para equipos remotos e internacionales.</li><li>Automatización de la recolección y limpieza de datos.</li></ul></article>
+</div></div></section>
+
+<section id="edu"><div class="wrap">
+<h2 class="rv">Cómo me formo</h2><p class="sub rv">Estudio todo el tiempo y no pienso parar.</p>
+<div class="edu">
+<div class="rv"><span>En curso</span><b>Ingeniería de Sistemas</b><p>Universidad El Bosque</p></div>
+<div class="rv"><span>2025</span><b>Técnico en Defensa Cibernética</b><p>Redes, vulnerabilidades, criptografía y ethical hacking.</p></div>
+<div class="rv"><span>2024</span><b>Cursos Full Stack</b><p>Alura: web full stack, Python y SQL.</p></div>
+<div class="rv"><span>2023</span><b>Educación secundaria</b><p>ENCCEJA, Brasil.</p></div>
+</div></div></section>
+
+<section id="contacto"><div class="wrap rv"><div class="contact">
+<h2>¿Tienes datos que contar?</h2>
+<p class="sub" style="margin-inline:auto">Bogotá, Colombia · Portugués nativo, español C1, inglés B2.</p>
+<div class="btns"><a class="btn main" href="mailto:bernardoportellasilva@gmail.com">Escribir un correo</a></div>
+</div></div></section>
+<footer>© 2026 Bernardo Henrique Portella Maia Silva</footer>
+
+<script>
+const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// lluvia de datos
+const cv=document.getElementById('rain'),cx=cv.getContext('2d');let cols=[],fs=16;
+function size(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight;cols=Array(Math.ceil(cv.width/fs)).fill(0).map(()=>Math.random()*-50)}
+size();addEventListener('resize',size);
+function rain(){cx.fillStyle='rgba(0,0,0,.12)';cx.fillRect(0,0,cv.width,cv.height);cx.fillStyle='#1fe08a';cx.font=fs+'px monospace';
+cols.forEach((y,i)=>{cx.fillText(Math.random()>.5?1:0,i*fs,y*fs);cols[i]=y*fs>cv.height&&Math.random()>.975?0:y+1})}
+if(!RM)setInterval(rain,70);
+// barras
+const bars=document.getElementById('bars');[60,85,70,105,115,140,160].forEach((h,i)=>{bars.insertAdjacentHTML('beforeend',`<rect class="bar" style="--i:${i}" x="${i*65+8}" y="${190-h}" width="40" height="${h}" rx="5"/>`)});
+// texto escrito
+const words=['Convierto datos en decisiones.','Automatizo con Python.','Cuento historias en Power BI.','Protejo lo que analizo.'];
+const t=document.getElementById('typed');let wi=0,ci=0,del=false;
+function type(){const w=words[wi];t.textContent=w.slice(0,ci);
+if(!del&&ci===w.length){del=true;return setTimeout(type,1700)}
+if(del&&ci===0){del=false;wi=(wi+1)%words.length}
+ci+=del?-1:1;setTimeout(type,del?28:60)}
+RM?t.textContent=words[0]:type();
+// ticker
+const tools=['Python','SQL','Power BI','DAX','Pandas','ETL','Automatización','OWASP','Linux','Git','Dashboards'];
+document.getElementById('tk').innerHTML=[...tools,...tools].map(x=>`<span>${x}</span>`).join('');
+// consulta SQL
+const sql=`<span class="c">-- ejemplo: ventas por región</span>\n<span class="k">SELECT</span> region, <span class="k">SUM</span>(ventas) <span class="k">AS</span> total\n<span class="k">FROM</span> pedidos\n<span class="k">WHERE</span> anio = 2026\n<span class="k">GROUP BY</span> region\n<span class="k">ORDER BY</span> total <span class="k">DESC</span>;\n\n<span class="k">✔</span> <span class="c">consulta ejecutada · listo para el dashboard</span>`;
+const pre=document.getElementById('sql');let started=false;
+function typeSQL(){let i=0,out='',tag=false;(function step(){if(i>=sql.length)return;const ch=sql[i++];out+=ch;if(ch==='<')tag=true;if(ch==='>')tag=false;pre.innerHTML=out;tag?step():setTimeout(step,18)})()}
+// habilidades
+const data={'Análisis de datos':['Limpieza y transformación','EDA','ETL','KPIs','Modelado relacional','Power BI','DAX','Power Query','Dashboards'],
+'Programación':['Python','Pandas','NumPy','SQL','Automatización','Git','Jupyter','HTML5 y CSS3','JavaScript','APIs REST'],
+'Ciberseguridad':['Análisis de redes','OWASP Top 10','Hardening','Respuesta a incidentes','Ethical hacking','Criptografía','Linux y Windows']};
+const tabs=document.getElementById('tabs'),chips=document.getElementById('chips');
+function show(k){[...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===k));
+chips.innerHTML=data[k].map((x,i)=>`<span class="chip" style="--i:${i}">${x}</span>`).join('')}
+Object.keys(data).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.setAttribute('role','tab');b.onclick=()=>show(k);tabs.appendChild(b)});
+show('Análisis de datos');
+// contadores
+function count(el){const n=+el.dataset.n,s=el.dataset.s||'';let v=0;const id=setInterval(()=>{v++;el.textContent=v+(v===n?s:'');if(v>=n)clearInterval(id)},RM?1:260)}
+setTimeout(()=>document.querySelectorAll('[data-n]').forEach(count),900);
+// revelar al hacer scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');if(e.target.querySelector('#sql')&&!started){started=true;RM?pre.innerHTML=sql:typeSQL()}io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+// línea de tiempo
+const tl=document.getElementById('tl');
+function prog(){const r=tl.getBoundingClientRect();tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.7-r.top)/r.height)))}
+addEventListener('scroll',prog,{passive:true});prog();
+// brillo y movimiento 3D
+const g=document.getElementById('glow'),d=document.getElementById('dash');
+addEventListener('pointermove',e=>{g.style.setProperty('--x',e.clientX+'px');g.style.setProperty('--y',e.clientY+'px');
+if(RM)return;const r=d.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+if(Math.abs(x)<1&&Math.abs(y)<1)d.style.transform=`perspective(900px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`;else d.style.transform=''});
+</script>
+</body>
+</html>
